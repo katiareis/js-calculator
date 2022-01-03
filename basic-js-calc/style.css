@@ -1,0 +1,205 @@
+/**
+ * base styles and typography
+ * ---------------
+ */
+:root {
+  --orange-050: #ffe8d9;
+  --orange-100: #ffd0b5;
+  --orange-200: #ffb088;
+  --orange-300: #ff9466;
+  --orange-400: #f9703e;
+  --orange-500: #f35627;
+  --orange-600: #de3a11;
+  --orange-700: #c52707;
+  --orange-800: #ad1d07;
+  --orange-900: #841003;
+
+  --grey-050: #f5f7fa;
+  --grey-100: #e4e7eb;
+  --grey-200: #cbd2d9;
+  --grey-300: #9aa5b1;
+  --grey-400: #7b8794;
+  --grey-500: #616e7c;
+  --grey-600: #52606d;
+  --grey-700: #3e4c59;
+  --grey-800: #323f4b;
+  --grey-900: #1f2933;
+}
+
+/*******************
+ Base styles
+ *******************/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-family: "IBM Plex Mono", monospace;
+  line-height: 1.4;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(236deg, #74ebd5, #acb6e5);
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+/*******************
+ Calculator
+ *******************/
+.container {
+  max-width: 100vw;
+  max-height: auto;
+  margin-bottom: 10px;
+}
+
+.calculator {
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+
+.calculator-display {
+  background-color: var(--grey-900);
+  color: var(--grey-050);
+  width: 16.25rem;
+  padding: 0.75rem 1rem;
+  text-align: right;
+  font-size: calc(1rem * 1.2 * 1.2);
+  position: relative;
+  word-wrap: wrap;
+}
+
+.memory-calc {
+  opacity: 0.4;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.main-display {
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.temp-result {
+  position: absolute;
+  bottom: 0;
+  left: 10;
+  font-size: 1rem;
+  opacity: 0.4;
+  word-wrap: break-word;
+}
+
+.calculator-keys {
+  background: var(--grey-200);
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: repeat(4, auto);
+  grid-template-areas:
+    ". . . ."
+    "seven eight nine percentage"
+    "four five six equal"
+    "one two three equal"
+    "zero zero decimal equal";
+}
+
+.calculator-keys > button {
+  border: 0;
+  font-size: 0.75rem;
+  padding: 1rem;
+}
+
+.one {
+  grid-area: one;
+}
+.two {
+  grid-area: two;
+}
+.three {
+  grid-area: three;
+}
+.four {
+  grid-area: four;
+}
+.five {
+  grid-area: five;
+}
+.six {
+  grid-area: six;
+}
+.seven {
+  grid-area: seven;
+}
+.eight {
+  grid-area: eight;
+}
+.nine {
+  grid-area: nine;
+}
+.zero {
+  grid-area: zero;
+}
+.decimal {
+  grid-area: decimal;
+}
+.clear {
+  grid-area: clear;
+}
+.equal {
+  grid-area: equal;
+  background-color: var(--orange-400);
+}
+
+.equal:active {
+  background-color: var(--orange-500);
+}
+
+.operator {
+  background: var(--grey-100);
+}
+
+.number {
+  background: #fff;
+}
+
+.number:hover,
+.number:focus {
+  background: var(--grey-100);
+}
+
+.operator:hover,
+.operator:focus {
+  background: var(--grey-050);
+}
+
+.operator:active,
+.number:active {
+  background: var(--grey-200);
+}
+
+.footer {
+  font-size: 0.75rem !important;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .calculator {
+    max-width: 100vw;
+    align-self: flex-start;
+    overflow: hidden;
+  }
+}
