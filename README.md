@@ -1,7 +1,7 @@
 # js-calculator
 Calculator with HTML, CSS, and Vanilla JavaScript
 
-Calculator with HTML, CSS and Vanilla JavaScript.
+https://katiareis.github.io/js-calculator/
 
 
 # Features
