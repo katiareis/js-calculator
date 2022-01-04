@@ -7,4 +7,4 @@ https://katiareis.github.io/js-calculator/
 # Features
 Used CSS classes and Document.querySelector() to call JS functions.
 
-Tried to keep the code very simple so I used basic vanilla JavaScript and eval().
+Tried to keep the code very simple so I used basic vanilla JavaScript and if statements.
