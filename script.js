@@ -21,7 +21,7 @@ let display2Number = "";
 let result = null;
 let lastOperation = "";
 let haveDot = false;
-let maxChar = 15;
+let maxChar = "111111111111111";
 
 //Add event listener to the numbers
 numbers.forEach((number) => {
@@ -36,18 +36,9 @@ numbers.forEach((number) => {
     display2Number += e.target.innerText; //concatenate input at the variable
     mainDisplay.innerText = display2Number; // show it at the display
 
-    if (mainDisplay.length > maxChar) {
-      limit(mainDisplay);
-    }
-
-    // Prevent more than 15 characters
-    function limit(mainDisplay) {
-      let maxChar = 15;
-      maxChar++;
-
-      if (mainDisplay.value.length > maxChar) {
-        mainDisplay = document.querySelector(".main-display").disabled = true;
-      }
+    if (mainDisplay.innerText.length > maxChar) {
+      mainDisplay.disabled = true;
+      return;
     }
   });
 });
